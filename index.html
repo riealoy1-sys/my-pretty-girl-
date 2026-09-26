@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proud of You, My Strong Girl</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Falling Flowers Effect Container -->
+    <div id="flower-container"></div>
+
+    <div class="app-container">
+
+        <!-- SECTION 1: PASSCODE -->
+        <div id="screen-passcode" class="screen active">
+            <div class="flower-icon">🌸</div>
+            <h1 class="header-title">For You, My Strong Girl</h1>
+            <p class="sub-text">Enter our secret code</p>
+            
+            <div class="dots-display">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="keypad">
+                <button class="key" onclick="appendPin('1')">1</button>
+                <button class="key" onclick="appendPin('2')">2</button>
+                <button class="key" onclick="appendPin('3')">3</button>
+                <button class="key" onclick="appendPin('4')">4</button>
+                <button class="key" onclick="appendPin('5')">5</button>
+                <button class="key" onclick="appendPin('6')">6</button>
+                <button class="key" onclick="appendPin('7')">7</button>
+                <button class="key" onclick="appendPin('8')">8</button>
+                <button class="key" onclick="appendPin('9')">9</button>
+                <button class="key action-key" onclick="clearPin()">✕</button>
+                <button class="key" onclick="appendPin('0')">0</button>
+                <button class="key action-key" onclick="deletePin()">↩</button>
+            </div>
+
+            <p class="hint-text">Hint: Ultah orang kesayangan 💖</p>
+        </div>
+
+        <!-- SECTION 2: GIFT BOX -->
+        <div id="screen-gift" class="screen">
+            <p class="sub-text">Tap the gift box to open your reward 🎁</p>
+            <div class="gift-box-wrapper" onclick="openGift()">
+                <div class="gift-box">
+                    <div class="gift-ribbon"></div>
+                </div>
+            </div>
+            <p id="gift-loading-text" class="loading-text" style="display:none;">✨ Preparing something special for my warrior... ✨</p>
+        </div>
+
+        <!-- SECTION 3: MAIN WEBSITE CONTENT -->
+        <div id="screen-main" class="screen">
+            
+            <!-- Header -->
+            <div class="main-header">
+                <span class="badge">🌸 PROUD OF YOU 🌸</span>
+                <h1 class="main-title">Selamat Sudah Berusaha Jadi Orang yang Kuat</h1>
+                <div class="date-badge">SPECIAL SURPRISE • FOR MY STRONGEST GIRL</div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <span>SCROLL DOWN</span>
+                <div class="arrow-down">↓</div>
+            </div>
+
+            <!-- Gift 1: Digital Bouquet -->
+            <section class="section-block">
+                <span class="section-tag">— A SPECIAL FLOWER FOR YOU —</span>
+                <h2 class="section-title">A Digital Bouquet</h2>
+                <p class="section-desc">Setiap bunga ini punya pesan penguat buat kamu</p>
+
+                <div class="bouquet-display">
+                    <div class="floating-flowers">
+                        <span onclick="showFlowerMsg('🌸 Kamu udah bertahan sejauh ini, dan aku bangga banget sama ketahanan kamu.')">🌸</span>
+                        <span onclick="showFlowerMsg('🌻 Seperti bunga matahari, kamu tetap bersinar dan kuat walau capek banget.')">🌻</span>
+                        <span onclick="showFlowerMsg('🌹 Rasa lelah kamu selama LDKS bakal terbayar jadi pengalaman dan mental yang hebat!')">🌹</span>
+                        <span onclick="showFlowerMsg('🌼 Jangan lupa istirahat ya, kamu udah melakukan yang terbaik hari ini.')">🌼</span>
+                    </div>
+                    <div class="flower-pot">
+                        <div class="pot-base">🐭</div>
+                    </div>
+                </div>
+
+                <div class="toast-message" id="flower-toast">
+                    Pencet bunganya satu-satu yaa...
+                </div>
+            </section>
+
+            <!-- Letter Section -->
+            <section class="section-block">
+                <span class="section-tag">— FROM MY HEART —</span>
+                <h2 class="section-title">Surat Buat Cewek Hebatku</h2>
+                <div class="date-tag">🌸 Message for You 🌸</div>
+
+                <div class="letter-card">
+                    <p class="letter-greeting">Hai Sayang,</p>
+                    <p class="letter-body">
+                        Selamat ya, kamu sudah berhasil bertahan dan berusaha jadi orang yang sangat kuat! Aku tahu banget LDKS SMA itu menguras tenaga, pikiran, dan emosi kamu. Tapi lihat diri kamu sekarang, kamu bisa melewatinya dengan sangat luar biasa.<br><br>
+                        Mungkin ada saat-saat kamu ngerasa capek banget, pengen menyerah, atau kangen rumah. Tapi kamu membuktikan kalau kamu bukan cewek yang lemah. Kamu kuat, kamu hebat, dan kamu mampu berdiri tegak melewati semuanya.<br><br>
+                        Terima kasih ya sudah berjuang keras dan nggak menyerah sama keadaan. Aku di sini selalu bangga sama setiap proses yang kamu jalani.<br><br>
+                        Sekarang tugas kamu sudah selesai, waktunya kamu istirahat yang cukup. Ingat ya, seandainya kamu merasa lelah lagi di kemudian hari, kamu selalu punya aku tempat untuk pulang dan bersandar.
+                    </p>
+                    <p class="letter-ps">P.S. — Aku selalu bangga punya kamu. Rest well, my hero! 🌸💕</p>
+                    <div class="letter-signature">
+                        <span>Dengan rasa bangga,</span>
+                        <strong>Pacarmu yang selalu mendukungmu</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photo Memories Section -->
+            <section class="section-block">
+                <span class="section-tag">— MEMORIES —</span>
+                <h2 class="section-title">Semangat Kamu, Senyum Kamu</h2>
+                <p class="section-desc">Ingat momen-momen manis ini biar capeknya hilang!</p>
+
+                <                <div class="polaroid-list">
+                    <div class="polaroid-card" onclick="openModal('foto1.jpg', 'Senyuman kamu yang selalu bikin aku makin sayang')">
+                        <div class="photo-frame"><img src="foto1.jpg" alt="Memory 1"></div>
+                        <p class="caption">Senyuman kamu yang selalu bikin aku bahagia</p>
+                    </div>
+
+                    <div class="polaroid-card" onclick="openModal('foto2.jpg', 'Bahkan saat capek pun kamu tetap kelihatan hebat')">
+                        <div class="photo-frame"><img src="foto2.jpg" alt="Memory 2"></div>
+                        <p class="caption">Bahkan saat capek pun kamu tetap kelihatan keren</p>
+                    </div>
+
+                    <div class="polaroid-card" onclick="openModal('foto3.jpg', 'Gak sabar mau ketemu dan dengar cerita LDKS kamu!')">
+                        <div class="photo-frame"><img src="foto3.jpg" alt="Memory 3"></div>
+                        <p class="caption">Gak sabar mau ketemu dan dengar cerita kamu!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Journey Timeline Section -->
+            <section class="section-block">
+                <span class="section-tag">— YOUR PROCESS —</span>
+                <h2 class="section-title">Perjalanan Ketahanan Kamu</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">✨</div>
+                        <span class="timeline-tag">PERSIAPAN</span>
+                        <h3>Awal LDKS Dimulai</h3>
+                        <p>Rasa deg-degan dan ragu di awal, tapi kamu tetap memberanikan diri untuk maju dan ikut.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">💪</div>
+                        <span class="timeline-tag">PERJUANGAN</span>
+                        <h3>Ujian Fisik & Mental</h3>
+                        <p>Panas-panasan, ketegangan, dan rasa lelah yang luar biasa, tapi kamu terus bertahan tanpa mengeluh.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">💖</div>
+                        <span class="timeline-tag">KEKUATAN KANNYA</span>
+                        <h3>Melawan Rasa Ingin Menyerah</h3>
+                        <p>Saat titik terberat datang, kamu membuktikan mental baja kamu. Kamu jauh lebih kuat dari yang kamu kira.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🏆</div>
+                        <span class="timeline-tag">KEMENANGAN</span>
+                        <h3>Selesai & Lulus LDKS!</h3>
+                        <p>Selamat! Kamu sudah resmi melewati masa penempaan ini dan keluar jadi versi terbaik diri kamu.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Music Playlist Section -->
+            <section class="section-block">
+                <span class="section-tag">— SONGS FOR YOU —</span>
+                <h2 class="section-title">Lagu Penenang Rasa Capek</h2>
+                <p class="section-desc">Dengarkan lagu ini sambil istirahat yaa</p>
+
+                <div class="music-player-card">
+                    <div class="album-art spinning" id="album-art">🌸</div>
+                    <h3 id="song-title">Shape Of My Heart</h3>
+                    <p id="song-artist">Backstreet Boys</p>
+
+                    <div class="player-controls">
+                        <button onclick="prevSong()">⏮</button>
+                        <button id="play-btn" class="play-btn" onclick="togglePlay()">⏸</button>
+                        <button onclick="nextSong()">⏭</button>
+                    </div>
+
+                    <div class="playlist-list">
+                        <div class="song-item active" onclick="playSelectSong(0)">
+                            <span>1. Shape Of My Heart</span>
+                            <small>Backstreet Boys</small>
+                        </div>
+                        <div class="song-item" onclick="playSelectSong(1)">
+                            <span>2. Angel Baby</span>
+                            <small>Troye Sivan</small>
+                        </div>
+                        <div class="song-item" onclick="playSelectSong(2)">
+                            <span>3. My Love</span>
+                            <small>Westlife</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Jar of Reasons Section -->
+            <section class="section-block">
+                <span class="section-tag">— HEALING NOTES —</span>
+                <h2 class="section-title">Alasan Kenapa Kamu Hebat Banget</h2>
+                <p class="section-desc">Kocok botolnya untuk ambil pesan semangat! 🏺</p>
+
+                <div class="jar-wrapper">
+                    <div class="jar" id="jar-element">
+                        <div class="jar-lid"></div>
+                        <div class="note-paper"></div>
+                        <div class="note-paper"></div>
+                        <div class="note-paper"></div>
+                    </div>
+                    <button class="shake-btn" onclick="shakeJar()">🏺 Shake the Jar</button>
+                </div>
+
+                <div class="popup-note" id="note-popup" style="display:none;">
+                    <p id="note-text">Kamu selalu bisa menangani situasi sulit dengan kepala dingin.</p>
+                </div>
+            </section>
+
+            <!-- Footer Message & Final Popup -->
+            <footer class="footer-section">
+                <span>🌸 You Did It, Girl! 🌸</span>
+                <h2>Kamu Luar Biasa Banget Hari Ini!</h2>
+                <p>Istirahat yang nyenyak ya sayang. Makan yang enak, minum yang banyak, dan tidur yang cukup. Maaf ya cuma bisa ngasih kejutan kecil ini, tapi aku tulus banget bangga sama kamu!</p>
+                <p class="pink-link">— Aku Selalu Ada Buat Kamu 💕 —</p>
+
+                <button class="modal-trigger-btn" onclick="openBirthdayModal()">Buka Kartu Apresiasi 🏆</button>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <div class="modal-content-box">
+            <img id="modal-img" src="" alt="Zoomed Memory">
+            <p id="modal-caption"></p>
+        </div>
+    </div>
+
+    <!-- Celebration Pop-up Card Modal -->
+    <div id="bday-modal" class="modal">
+        <div class="bday-card-popup">
+            <div class="bday-icon">🏆</div>
+            <h2>Proud of You!</h2>
+            <p>Selamat sudah berhasil melewati LDKS dan jadi orang yang luar biasa kuat! 🌸</p>
+            <button class="close-card-btn" onclick="closeBirthdayModal()">Close ✕</button>
+        </div>
+    </div>
+    <audio id="bg-music" src="lagu.mp3" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
