@@ -122,19 +122,19 @@
                 <h2 class="section-title">Semangat Kamu, Senyum Kamu</h2>
                 <p class="section-desc">Ingat momen-momen manis ini biar capeknya hilang!</p>
 
-                <                <div class="polaroid-list">
-                    <div class="polaroid-card" onclick="openModal('foto1.jpg', 'Senyuman kamu yang selalu bikin aku makin sayang')">
-                        <div class="photo-frame"><img src="foto1.jpg" alt="Memory 1"></div>
+                <div class="polaroid-list">
+                    <div class="polaroid-card" onclick="openModal('https://images.unsplash.com/photo-1507525428034-b723cf961d3e', 'Senyuman kamu yang selalu bikin aku makin sayang')">
+                        <div class="photo-frame"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Memory 1"></div>
                         <p class="caption">Senyuman kamu yang selalu bikin aku bahagia</p>
                     </div>
 
-                    <div class="polaroid-card" onclick="openModal('foto2.jpg', 'Bahkan saat capek pun kamu tetap kelihatan hebat')">
-                        <div class="photo-frame"><img src="foto2.jpg" alt="Memory 2"></div>
+                    <div class="polaroid-card" onclick="openModal('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4', 'Bahkan saat capek pun kamu tetap kelihatan hebat')">
+                        <div class="photo-frame"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Memory 2"></div>
                         <p class="caption">Bahkan saat capek pun kamu tetap kelihatan keren</p>
                     </div>
 
-                    <div class="polaroid-card" onclick="openModal('foto3.jpg', 'Gak sabar mau ketemu dan dengar cerita LDKS kamu!')">
-                        <div class="photo-frame"><img src="foto3.jpg" alt="Memory 3"></div>
+                    <div class="polaroid-card" onclick="openModal('https://images.unsplash.com/photo-1509233725247-49e657c54213', 'Gak sabar mau ketemu dan dengar cerita LDKS kamu!')">
+                        <div class="photo-frame"><img src="https://images.unsplash.com/photo-1509233725247-49e657c54213" alt="Memory 3"></div>
                         <p class="caption">Gak sabar mau ketemu dan dengar cerita kamu!</p>
                     </div>
                 </div>
@@ -188,6 +188,85 @@
                     <p id="song-artist">Backstreet Boys</p>
 
                     <div class="player-controls">
+                        <button onclick="prevSong()">⏮</button>
+                        <button id="play-btn" class="play-btn" onclick="togglePlay()">⏸</button>
+                        <button onclick="nextSong()">⏭</button>
+                    </div>
+
+                    <div class="playlist-list">
+                        <div class="song-item active" onclick="playSelectSong(0)">
+                            <span>1. Shape Of My Heart</span>
+                            <small>Backstreet Boys</small>
+                        </div>
+                        <div class="song-item" onclick="playSelectSong(1)">
+                            <span>2. Angel Baby</span>
+                            <small>Troye Sivan</small>
+                        </div>
+                        <div class="song-item" onclick="playSelectSong(2)">
+                            <span>3. My Love</span>
+                            <small>Westlife</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Jar of Reasons Section -->
+            <section class="section-block">
+                <span class="section-tag">— HEALING NOTES —</span>
+                <h2 class="section-title">Alasan Kenapa Kamu Hebat Banget</h2>
+                <p class="section-desc">Kocok botolnya untuk ambil pesan semangat! 🏺</p>
+
+                <div class="jar-wrapper">
+                    <div class="jar" id="jar-element">
+                        <div class="jar-lid"></div>
+                        <div class="note-paper"></div>
+                        <div class="note-paper"></div>
+                        <div class="note-paper"></div>
+                    </div>
+                    <button class="shake-btn" onclick="shakeJar()">🏺 Shake the Jar</button>
+                </div>
+
+                <div class="popup-note" id="note-popup" style="display:none;">
+                    <p id="note-text">Kamu selalu bisa menangani situasi sulit dengan kepala dingin.</p>
+                </div>
+            </section>
+
+            <!-- Footer Message & Final Popup -->
+            <footer class="footer-section">
+                <span>🌸 You Did It, Girl! 🌸</span>
+                <h2>Kamu Luar Biasa Banget Hari Ini!</h2>
+                <p>Istirahat yang nyenyak ya sayang. Makan yang enak, minum yang banyak, dan tidur yang cukup. Maaf ya cuma bisa ngasih kejutan kecil ini, tapi aku tulus banget bangga sama kamu!</p>
+                <p class="pink-link">— Aku Selalu Ada Buat Kamu 💕 —</p>
+
+                <button class="modal-trigger-btn" onclick="openBirthdayModal()">Buka Kartu Apresiasi 🏆</button>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <div class="modal-content-box">
+            <img id="modal-img" src="" alt="Zoomed Memory">
+            <p id="modal-caption"></p>
+        </div>
+    </div>
+
+    <!-- Celebration Pop-up Card Modal -->
+    <div id="bday-modal" class="modal">
+        <div class="bday-card-popup">
+            <div class="bday-icon">🏆</div>
+            <h2>Proud of You!</h2>
+            <p>Selamat sudah berhasil melewati LDKS dan jadi orang yang luar biasa kuat! 🌸</p>
+            <button class="close-card-btn" onclick="closeBirthdayModal()">Close ✕</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+er-controls">
                         <button onclick="prevSong()">⏮</button>
                         <button id="play-btn" class="play-btn" onclick="togglePlay()">⏸</button>
                         <button onclick="nextSong()">⏭</button>
