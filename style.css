@@ -71,17 +71,15 @@ body {
 }
 
 .header-title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     color: #f8bbd0;
-    text-align: center;
 }
 
 .sub-text {
     font-size: 14px;
     color: #ce93d8;
     margin-top: 5px;
-    text-align: center;
 }
 
 .dots-display {
@@ -172,7 +170,6 @@ body {
 .loading-text {
     color: #f8bbd0;
     font-size: 14px;
-    text-align: center;
 }
 
 /* SECTION 3: MAIN CONTENT */
@@ -187,11 +184,10 @@ body {
 }
 
 .main-title {
-    font-size: 28px;
+    font-size: 38px;
     color: #f8bbd0;
     font-family: serif;
     margin: 10px 0;
-    line-height: 1.3;
 }
 
 .date-badge {
@@ -226,7 +222,7 @@ body {
 }
 
 .section-title {
-    font-size: 22px;
+    font-size: 24px;
     color: #f8bbd0;
     margin: 5px 0;
 }
@@ -544,7 +540,7 @@ body {
 }
 
 .footer-section h2 {
-    font-size: 20px;
+    font-size: 22px;
     color: #f8bbd0;
     margin: 10px 0;
 }
