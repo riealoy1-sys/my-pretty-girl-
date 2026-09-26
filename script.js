@@ -56,18 +56,9 @@ function switchScreen(fromId, toId) {
 // Handle Unboxing Gift
 function openGift() {
     document.getElementById('gift-loading-text').style.display = 'block';
-    
-    // Memutar musik otomatis saat kado dibuka
-    const music = document.getElementById('bg-music');
-    if (music) { 
-        music.play(); 
-    }
-
     setTimeout(() => {
         switchScreen('screen-gift', 'screen-main');
     }, 1200);
-}
-
 }
 
 // Digital Bouquet Toast
